@@ -21,6 +21,7 @@ namespace Ganaderia.App.Consola
             //GetGanadero(3);
             //UpdateGanadero();
             DeleteGanadero(3);
+            
         }
 
         
