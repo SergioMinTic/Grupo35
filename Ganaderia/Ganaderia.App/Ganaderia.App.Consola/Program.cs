@@ -8,6 +8,7 @@ namespace Ganaderia.App.Consola
     {
         /// <summary>
         private static IRepositorioGanadero _repoGanadero = new RepositorioGanadero(new Persistencia.AppContext());
+        private static IRepositorioVeterinario _repoVeterinario = new RepositorioVeterinario(new Persistencia.AppContext());
         
         /// <summary>
         /// 
@@ -20,7 +21,8 @@ namespace Ganaderia.App.Consola
             //GetAllGanaderos();
             //GetGanadero(3);
             //UpdateGanadero();
-            DeleteGanadero(3);
+            //DeleteGanadero(3);
+            AddVeterinario();
             
         }
 
@@ -77,6 +79,22 @@ namespace Ganaderia.App.Consola
         private static void DeleteGanadero(int IdGanadero)
         {
             _repoGanadero.DeleteGanadero(IdGanadero);
+        }
+
+        private static void AddVeterinario()
+        {
+            Veterinario veterinario = new Veterinario 
+            {
+                Nombre = "Juan",
+                Apellido = "Cuadrado",
+                NumeroTelefono = "3148569865",
+                Correo = "juan@mintic.edu.co",
+                Contrasena = "12345678",
+                Especialidad = "Médico genral",
+                NumeroTarjeta = "123"
+            };
+
+            _repoVeterinario.AddVeterinario(veterinario);
         }
 
 
